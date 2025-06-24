@@ -1,0 +1,4 @@
+/home/cthunga/Documents/VSC/PhysicsEngine/build/CMakeFiles/glad.dir
+/home/cthunga/Documents/VSC/PhysicsEngine/build/CMakeFiles/PhysicsEngine.dir
+/home/cthunga/Documents/VSC/PhysicsEngine/build/CMakeFiles/edit_cache.dir
+/home/cthunga/Documents/VSC/PhysicsEngine/build/CMakeFiles/rebuild_cache.dir

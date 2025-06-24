@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/PhysicsEngine.dir/main.cpp.o -o PhysicsEngine   -L/home/cthunga/Documents/VSC/PhysicsEngine/Libraries/lib  -Wl,-rpath,/home/cthunga/Documents/VSC/PhysicsEngine/Libraries/lib libglad.a -lglfw3 -ldl -lGL -lX11 -lpthread 
