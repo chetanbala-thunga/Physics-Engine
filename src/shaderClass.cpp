@@ -56,3 +56,22 @@ void Shader::Activate(){
 void Shader::Delete(){
     glDeleteProgram(ID);
 }
+
+void Shader::compileErrors(unsigned int shader, const char* type){
+    GLint success;
+    char infoLog[1024];
+    if(type != "PROGRAM"){
+        glGetShaderiv(shader, GL_COMPILE_STATUS, &success);
+        if (!success) {
+            glGetShaderInfoLog(shader, 1024, NULL, infoLog);
+            cout << "SHADER_COMPILATION_ERROR for:" << type << endl;
+        }
+    }
+    else{
+        glGetProgramiv(shader, GL_COMPILE_STATUS, &success);
+        if(!success){
+            glGetShaderInfoLog(shader, 1024, NULL, infoLog);
+            cout << "SHADER_COMPILATION_ERROR for:" << type << endl;
+        }
+    }
+}
