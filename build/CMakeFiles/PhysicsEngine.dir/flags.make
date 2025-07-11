@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/cthunga/Documents/VSC/PhysicsEngine/Libraries/include
+CXX_INCLUDES = -I/home/cthunga/Documents/VSC/PhysicsEngine/Libraries/include -I/home/cthunga/Documents/VSC/PhysicsEngine/Headers
 
 CXX_FLAGS = -std=gnu++17
 

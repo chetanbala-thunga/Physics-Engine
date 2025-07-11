@@ -8,7 +8,11 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/cthunga/Documents/VSC/PhysicsEngine/main.cpp" "CMakeFiles/PhysicsEngine.dir/main.cpp.o" "gcc" "CMakeFiles/PhysicsEngine.dir/main.cpp.o.d"
+  "/home/cthunga/Documents/VSC/PhysicsEngine/src/EBO.cpp" "CMakeFiles/PhysicsEngine.dir/src/EBO.cpp.o" "gcc" "CMakeFiles/PhysicsEngine.dir/src/EBO.cpp.o.d"
+  "/home/cthunga/Documents/VSC/PhysicsEngine/src/VAO.cpp" "CMakeFiles/PhysicsEngine.dir/src/VAO.cpp.o" "gcc" "CMakeFiles/PhysicsEngine.dir/src/VAO.cpp.o.d"
+  "/home/cthunga/Documents/VSC/PhysicsEngine/src/VBO.cpp" "CMakeFiles/PhysicsEngine.dir/src/VBO.cpp.o" "gcc" "CMakeFiles/PhysicsEngine.dir/src/VBO.cpp.o.d"
+  "/home/cthunga/Documents/VSC/PhysicsEngine/src/main.cpp" "CMakeFiles/PhysicsEngine.dir/src/main.cpp.o" "gcc" "CMakeFiles/PhysicsEngine.dir/src/main.cpp.o.d"
+  "/home/cthunga/Documents/VSC/PhysicsEngine/src/shaderClass.cpp" "CMakeFiles/PhysicsEngine.dir/src/shaderClass.cpp.o" "gcc" "CMakeFiles/PhysicsEngine.dir/src/shaderClass.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.
