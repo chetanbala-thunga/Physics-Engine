@@ -10,6 +10,24 @@
 
 using namespace std;
 
+GLfloat vertices[] = 
+{
+    -0.5f, -0.5f * float(sqrt(3)) / 3, 0.0f,
+    0.5f, -0.5f * float(sqrt(3)) / 3, 0.0f,
+    0.0f, 0.5f * float(sqrt(3)) * 2 / 3, 0.0f,
+    -0.5f / 2, 0.5f * float(sqrt(3)) / 6, 0.0f,
+    0.5f / 2, 0.5f * float(sqrt(3)) / 6, 0.0f,
+    0.0f, -0.5f * float(sqrt(3)) / 3, 0.0f
+};
+
+GLuint indices[] = {
+    0,3,5,
+    3,2,4,
+    5,4,1
+};
+
+
+
 int main(void)
 {
     // Initialize GLFW
@@ -19,22 +37,6 @@ int main(void)
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
-
-    GLfloat vertices[] = 
-    {
-        -0.5f, -0.5f * float(sqrt(3)) / 3, 0.0f,
-        0.5f, -0.5f * float(sqrt(3)) / 3, 0.0f,
-        0.0f, 0.5f * float(sqrt(3)) * 2 / 3, 0.0f,
-        -0.5f / 2, 0.5f * float(sqrt(3)) / 6, 0.0f,
-        0.5f / 2, 0.5f * float(sqrt(3)) / 6, 0.0f,
-        0.0f, -0.5f * float(sqrt(3)) / 3, 0.0f
-    };
-
-    GLuint indices[] = {
-        0,3,5,
-        3,2,4,
-        5,4,1
-    };
 
     // Window
     GLFWwindow* window = glfwCreateWindow(800, 800, "Window", NULL, NULL);
@@ -66,13 +68,11 @@ int main(void)
     VBO1.Unbind();
     EBO1.Unbind();
 
-    
-
 
     //While Loop
     while(!glfwWindowShouldClose(window)){
 
-        glClearColor(0.07f, 0.13f, 0.17f, 1.0f);
+        glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
         shaderProgram.Activate();
         VAO1.Bind();
