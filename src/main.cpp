@@ -15,19 +15,6 @@
 using namespace std;
 
 
-GLfloat vertices[] = 
-{
-    -0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f,
-    0.0f, 0.5f, 0.0f, 0.0f, 0.0f, 0.0f,
-    0.5f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f,
-    0.5f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f,
-    0.0f, -0.5f, 0.0f, 0.0f, 0.0f, 0.0f,
-    0.0f, -0.5f, 0.0f, 0.0f, 0.0f, 0.0f,
-    -0.5f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f,
-    -0.5f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f,
-    0.0f, 0.5f, 0.0f, 0.0f, 0.0f, 0.0f
-
-};
 
 int main(void)
 {
@@ -55,13 +42,19 @@ int main(void)
     glViewport(0, 0, 800, 800);
 
 
+
+
+
+    Circle c1(0.0f, 0.0f, 0.5f, 100);
+
+
     // VAO and VBO
     Shader shaderProgram("../Resources/Shaders/default.vert", "../Resources/Shaders/default.frag");
 
     VAO VAO1;
     VAO1.Bind();
 
-    VBO VBO1(vertices, sizeof(vertices));
+    VBO VBO1(c1.vertices.data(), c1.vertices.size() * sizeof(float));
 
     VAO1.LinkAtrrib(VBO1, 0, 3, GL_FLOAT, 6 * sizeof(float), (void*)0);
     VAO1.LinkAtrrib(VBO1, 1, 3, GL_FLOAT, 6 * sizeof(float), (void*)(3 * sizeof(float)));
@@ -69,6 +62,7 @@ int main(void)
 
     //GLuint uniID = glGetUniformLocation(shaderProgram.ID, "scale");
     GLuint transformLoc = glGetUniformLocation(shaderProgram.ID, "transform");
+
 
     //While Loop
     while(!glfwWindowShouldClose(window)){
@@ -78,17 +72,17 @@ int main(void)
 
         shaderProgram.Activate();
 
-        float time = glfwGetTime();               // seconds since launch
-        float yOffset = 0.5f - 0.3f * time;       // falls down at 0.3 units per second
+        float time = glfwGetTime();
+        float yOffset = 0.5f - 0.3f * time;
 
-        glm::mat4 transform = glm::mat4(1.0f);    // identity
+        glm::mat4 transform = glm::mat4(1.0f);
         transform = glm::translate(transform, glm::vec3(0.0f, yOffset, 0.0f));
 
         glUniformMatrix4fv(transformLoc, 1, GL_FALSE, glm::value_ptr(transform));
                 
         
         VAO1.Bind();
-        glDrawArrays(GL_TRIANGLE_FAN, 0, sizeof(vertices));
+        glDrawArrays(GL_TRIANGLE_FAN, 0, c1.vertices.size() / 6);
         
         glfwSwapBuffers(window);
         glfwPollEvents();
@@ -101,13 +95,6 @@ int main(void)
     // Delete Window and terminate GLFW
     glfwDestroyWindow(window);
     glfwTerminate();
-
-    Circle c1;
-    Circle c2(0.3f, 0.7f, 0.5f);
-
-    cout << c1.position.at(0) << "," << c1.position.at(1) << " , r = " << c1.radius << endl;
-    cout << c2.position.at(0) << "," << c2.position.at(1) << " , r = " << c2.radius << endl;
-
 
     return 0;
 }

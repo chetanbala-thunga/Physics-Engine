@@ -8,11 +8,9 @@ class Circle{
         std::vector<float> position;
         int radius;
 
-        int segments;
         std::vector<float> vertices;
 
-        Circle();
-        Circle(float x, float y, float r);
+        Circle(float x, float y, float r, int seg);
 
 };
 
