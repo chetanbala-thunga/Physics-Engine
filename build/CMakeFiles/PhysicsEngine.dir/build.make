@@ -69,10 +69,24 @@ include CMakeFiles/PhysicsEngine.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/PhysicsEngine.dir/flags.make
 
+CMakeFiles/PhysicsEngine.dir/src/Circle.cpp.o: CMakeFiles/PhysicsEngine.dir/flags.make
+CMakeFiles/PhysicsEngine.dir/src/Circle.cpp.o: /home/cthunga/Documents/VSC/PhysicsEngine/src/Circle.cpp
+CMakeFiles/PhysicsEngine.dir/src/Circle.cpp.o: CMakeFiles/PhysicsEngine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cthunga/Documents/VSC/PhysicsEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/PhysicsEngine.dir/src/Circle.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/PhysicsEngine.dir/src/Circle.cpp.o -MF CMakeFiles/PhysicsEngine.dir/src/Circle.cpp.o.d -o CMakeFiles/PhysicsEngine.dir/src/Circle.cpp.o -c /home/cthunga/Documents/VSC/PhysicsEngine/src/Circle.cpp
+
+CMakeFiles/PhysicsEngine.dir/src/Circle.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/PhysicsEngine.dir/src/Circle.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/cthunga/Documents/VSC/PhysicsEngine/src/Circle.cpp > CMakeFiles/PhysicsEngine.dir/src/Circle.cpp.i
+
+CMakeFiles/PhysicsEngine.dir/src/Circle.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/PhysicsEngine.dir/src/Circle.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/cthunga/Documents/VSC/PhysicsEngine/src/Circle.cpp -o CMakeFiles/PhysicsEngine.dir/src/Circle.cpp.s
+
 CMakeFiles/PhysicsEngine.dir/src/EBO.cpp.o: CMakeFiles/PhysicsEngine.dir/flags.make
 CMakeFiles/PhysicsEngine.dir/src/EBO.cpp.o: /home/cthunga/Documents/VSC/PhysicsEngine/src/EBO.cpp
 CMakeFiles/PhysicsEngine.dir/src/EBO.cpp.o: CMakeFiles/PhysicsEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cthunga/Documents/VSC/PhysicsEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/PhysicsEngine.dir/src/EBO.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cthunga/Documents/VSC/PhysicsEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/PhysicsEngine.dir/src/EBO.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/PhysicsEngine.dir/src/EBO.cpp.o -MF CMakeFiles/PhysicsEngine.dir/src/EBO.cpp.o.d -o CMakeFiles/PhysicsEngine.dir/src/EBO.cpp.o -c /home/cthunga/Documents/VSC/PhysicsEngine/src/EBO.cpp
 
 CMakeFiles/PhysicsEngine.dir/src/EBO.cpp.i: cmake_force
@@ -86,7 +100,7 @@ CMakeFiles/PhysicsEngine.dir/src/EBO.cpp.s: cmake_force
 CMakeFiles/PhysicsEngine.dir/src/VAO.cpp.o: CMakeFiles/PhysicsEngine.dir/flags.make
 CMakeFiles/PhysicsEngine.dir/src/VAO.cpp.o: /home/cthunga/Documents/VSC/PhysicsEngine/src/VAO.cpp
 CMakeFiles/PhysicsEngine.dir/src/VAO.cpp.o: CMakeFiles/PhysicsEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cthunga/Documents/VSC/PhysicsEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/PhysicsEngine.dir/src/VAO.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cthunga/Documents/VSC/PhysicsEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/PhysicsEngine.dir/src/VAO.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/PhysicsEngine.dir/src/VAO.cpp.o -MF CMakeFiles/PhysicsEngine.dir/src/VAO.cpp.o.d -o CMakeFiles/PhysicsEngine.dir/src/VAO.cpp.o -c /home/cthunga/Documents/VSC/PhysicsEngine/src/VAO.cpp
 
 CMakeFiles/PhysicsEngine.dir/src/VAO.cpp.i: cmake_force
@@ -100,7 +114,7 @@ CMakeFiles/PhysicsEngine.dir/src/VAO.cpp.s: cmake_force
 CMakeFiles/PhysicsEngine.dir/src/VBO.cpp.o: CMakeFiles/PhysicsEngine.dir/flags.make
 CMakeFiles/PhysicsEngine.dir/src/VBO.cpp.o: /home/cthunga/Documents/VSC/PhysicsEngine/src/VBO.cpp
 CMakeFiles/PhysicsEngine.dir/src/VBO.cpp.o: CMakeFiles/PhysicsEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cthunga/Documents/VSC/PhysicsEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/PhysicsEngine.dir/src/VBO.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cthunga/Documents/VSC/PhysicsEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/PhysicsEngine.dir/src/VBO.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/PhysicsEngine.dir/src/VBO.cpp.o -MF CMakeFiles/PhysicsEngine.dir/src/VBO.cpp.o.d -o CMakeFiles/PhysicsEngine.dir/src/VBO.cpp.o -c /home/cthunga/Documents/VSC/PhysicsEngine/src/VBO.cpp
 
 CMakeFiles/PhysicsEngine.dir/src/VBO.cpp.i: cmake_force
@@ -114,7 +128,7 @@ CMakeFiles/PhysicsEngine.dir/src/VBO.cpp.s: cmake_force
 CMakeFiles/PhysicsEngine.dir/src/main.cpp.o: CMakeFiles/PhysicsEngine.dir/flags.make
 CMakeFiles/PhysicsEngine.dir/src/main.cpp.o: /home/cthunga/Documents/VSC/PhysicsEngine/src/main.cpp
 CMakeFiles/PhysicsEngine.dir/src/main.cpp.o: CMakeFiles/PhysicsEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cthunga/Documents/VSC/PhysicsEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/PhysicsEngine.dir/src/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cthunga/Documents/VSC/PhysicsEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/PhysicsEngine.dir/src/main.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/PhysicsEngine.dir/src/main.cpp.o -MF CMakeFiles/PhysicsEngine.dir/src/main.cpp.o.d -o CMakeFiles/PhysicsEngine.dir/src/main.cpp.o -c /home/cthunga/Documents/VSC/PhysicsEngine/src/main.cpp
 
 CMakeFiles/PhysicsEngine.dir/src/main.cpp.i: cmake_force
@@ -128,7 +142,7 @@ CMakeFiles/PhysicsEngine.dir/src/main.cpp.s: cmake_force
 CMakeFiles/PhysicsEngine.dir/src/shaderClass.cpp.o: CMakeFiles/PhysicsEngine.dir/flags.make
 CMakeFiles/PhysicsEngine.dir/src/shaderClass.cpp.o: /home/cthunga/Documents/VSC/PhysicsEngine/src/shaderClass.cpp
 CMakeFiles/PhysicsEngine.dir/src/shaderClass.cpp.o: CMakeFiles/PhysicsEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cthunga/Documents/VSC/PhysicsEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/PhysicsEngine.dir/src/shaderClass.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cthunga/Documents/VSC/PhysicsEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/PhysicsEngine.dir/src/shaderClass.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/PhysicsEngine.dir/src/shaderClass.cpp.o -MF CMakeFiles/PhysicsEngine.dir/src/shaderClass.cpp.o.d -o CMakeFiles/PhysicsEngine.dir/src/shaderClass.cpp.o -c /home/cthunga/Documents/VSC/PhysicsEngine/src/shaderClass.cpp
 
 CMakeFiles/PhysicsEngine.dir/src/shaderClass.cpp.i: cmake_force
@@ -141,6 +155,7 @@ CMakeFiles/PhysicsEngine.dir/src/shaderClass.cpp.s: cmake_force
 
 # Object files for target PhysicsEngine
 PhysicsEngine_OBJECTS = \
+"CMakeFiles/PhysicsEngine.dir/src/Circle.cpp.o" \
 "CMakeFiles/PhysicsEngine.dir/src/EBO.cpp.o" \
 "CMakeFiles/PhysicsEngine.dir/src/VAO.cpp.o" \
 "CMakeFiles/PhysicsEngine.dir/src/VBO.cpp.o" \
@@ -150,6 +165,7 @@ PhysicsEngine_OBJECTS = \
 # External object files for target PhysicsEngine
 PhysicsEngine_EXTERNAL_OBJECTS =
 
+PhysicsEngine: CMakeFiles/PhysicsEngine.dir/src/Circle.cpp.o
 PhysicsEngine: CMakeFiles/PhysicsEngine.dir/src/EBO.cpp.o
 PhysicsEngine: CMakeFiles/PhysicsEngine.dir/src/VAO.cpp.o
 PhysicsEngine: CMakeFiles/PhysicsEngine.dir/src/VBO.cpp.o
@@ -158,7 +174,7 @@ PhysicsEngine: CMakeFiles/PhysicsEngine.dir/src/shaderClass.cpp.o
 PhysicsEngine: CMakeFiles/PhysicsEngine.dir/build.make
 PhysicsEngine: libglad.a
 PhysicsEngine: CMakeFiles/PhysicsEngine.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/cthunga/Documents/VSC/PhysicsEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable PhysicsEngine"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/cthunga/Documents/VSC/PhysicsEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable PhysicsEngine"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/PhysicsEngine.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
