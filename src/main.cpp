@@ -15,6 +15,8 @@
 using namespace std;
 
 
+vector<Circle> objects;
+
 
 int main(void)
 {
@@ -42,27 +44,19 @@ int main(void)
     glViewport(0, 0, 800, 800);
 
 
-
-
-
-    Circle c1(0.0f, 0.0f, 0.5f, 100);
+    Circle c1(0.5f, 0.0f, 0.1f, 50);
+    Circle c2(-0.5f, 0.0f, 0.1f, 50);
+    Circle c3(-0.5f, 0.3f, 0.1f, 50);
+    objects.push_back(c1);
+    objects.push_back(c2);
+    objects.push_back(c3);
 
 
     // VAO and VBO
     Shader shaderProgram("../Resources/Shaders/default.vert", "../Resources/Shaders/default.frag");
 
-    VAO VAO1;
-    VAO1.Bind();
 
-    VBO VBO1(c1.vertices.data(), c1.vertices.size() * sizeof(float));
-
-    VAO1.LinkAtrrib(VBO1, 0, 3, GL_FLOAT, 6 * sizeof(float), (void*)0);
-    VAO1.LinkAtrrib(VBO1, 1, 3, GL_FLOAT, 6 * sizeof(float), (void*)(3 * sizeof(float)));
-    VAO1.Unbind();
-
-    //GLuint uniID = glGetUniformLocation(shaderProgram.ID, "scale");
     GLuint transformLoc = glGetUniformLocation(shaderProgram.ID, "transform");
-
 
     //While Loop
     while(!glfwWindowShouldClose(window)){
@@ -74,22 +68,17 @@ int main(void)
 
         float time = glfwGetTime();
         float yOffset = 0.5f - 0.3f * time;
-
         glm::mat4 transform = glm::mat4(1.0f);
         transform = glm::translate(transform, glm::vec3(0.0f, yOffset, 0.0f));
-
         glUniformMatrix4fv(transformLoc, 1, GL_FALSE, glm::value_ptr(transform));
-                
-        
-        VAO1.Bind();
-        glDrawArrays(GL_TRIANGLE_FAN, 0, c1.vertices.size() / 6);
+
+        for(Circle& circle: objects) circle.draw();
         
         glfwSwapBuffers(window);
         glfwPollEvents();
     }
 
-    VAO1.Delete();
-    VBO1.Delete();
+    for(Circle& circle: objects) circle.cleanup();
     shaderProgram.Delete();
 
     // Delete Window and terminate GLFW
