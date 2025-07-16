@@ -51,7 +51,6 @@ int main(void)
     objects.push_back(c2);
     objects.push_back(c3);
 
-
     // VAO and VBO
     Shader shaderProgram("../Resources/Shaders/default.vert", "../Resources/Shaders/default.frag");
 
