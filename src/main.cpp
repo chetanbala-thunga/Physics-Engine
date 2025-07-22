@@ -16,14 +16,14 @@ using namespace std;
 
 
 vector<Circle> objects;
+constexpr float PI = 3.14159265358979323846f;
+constexpr float G = 6.67430e-11f;
 
 
 int main(void)
 {
     // Initialize GLFW
     glfwInit();
-
-    // GLFW version
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
@@ -35,43 +35,40 @@ int main(void)
         glfwTerminate();
         return -1;
     }
-
-    // Window in current context
     glfwMakeContextCurrent(window);
+    glfwSwapInterval(1);
 
     // Load GLAD and specify viewport
     gladLoadGL();
     glViewport(0, 0, 800, 800);
+    
 
-
-    Circle c1(0.5f, 0.0f, 0.1f, 50);
-    Circle c2(-0.5f, 0.0f, 0.1f, 50);
-    Circle c3(-0.5f, 0.3f, 0.1f, 50);
+    Circle c1(-0.5f, 0.0f, 0.0f, 0.5f, 0.1f, 10, 10000000000.0f);
+    Circle c2(0.5f, 0.0f, 0.0f, -0.5f, 0.1f, 10, 10000000000.0f);
+    //Circle c3(0.0f, 0.5f, 0.0f, -0.5f, 0.1f, 10, 10000000000.0f);
     objects.push_back(c1);
     objects.push_back(c2);
-    objects.push_back(c3);
+    //objects.push_back(c3);
+    
 
-    // VAO and VBO
     Shader shaderProgram("../Resources/Shaders/default.vert", "../Resources/Shaders/default.frag");
+    shaderProgram.Activate();
+
+    glUniform4f(glGetUniformLocation(shaderProgram.ID, "uColor"), 0.0f, 1.0f, 0.0f, 1.0f);
 
 
-    GLuint transformLoc = glGetUniformLocation(shaderProgram.ID, "transform");
-
-    //While Loop
+    float dt = 0.01f;
     while(!glfwWindowShouldClose(window)){
 
         glClearColor(0.07f, 0.13f, 0.17f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
 
-        shaderProgram.Activate();
+        for(Circle& circle: objects){
+            circle.applyPhysics(dt, objects);
+            circle.updateVertices();
+        }
 
-        float time = glfwGetTime();
-        float yOffset = 0.5f - 0.3f * time;
-        glm::mat4 transform = glm::mat4(1.0f);
-        transform = glm::translate(transform, glm::vec3(0.0f, yOffset, 0.0f));
-        glUniformMatrix4fv(transformLoc, 1, GL_FALSE, glm::value_ptr(transform));
-
-        for(Circle& circle: objects) circle.draw();
+        for(Circle& circle: objects) circle.draw(shaderProgram);
         
         glfwSwapBuffers(window);
         glfwPollEvents();
@@ -79,8 +76,6 @@ int main(void)
 
     for(Circle& circle: objects) circle.cleanup();
     shaderProgram.Delete();
-
-    // Delete Window and terminate GLFW
     glfwDestroyWindow(window);
     glfwTerminate();
 

@@ -9,22 +9,31 @@
 #include "VBO.h"
 #include "VAO.h"
 #include "EBO.h"
+#include "shaderClass.h"
 
 class Circle{
     public:
-        std::vector<float> position;
-        int radius;
+        glm::vec3 position;
+        glm::vec3 velocity;
+        glm::vec3 acceleration;
+
+        glm::vec3 g = glm::vec3(0.0f, 0.0f, 0.0f);
+
+        float segments;
+        float radius;
+        float mass;
+
         std::vector<float> vertices;
 
         VAO VAO1;
         VBO VBO1;
 
-        float mass;
-
-        Circle(float x, float y, float r, int seg);
+        Circle(float x, float y, float vx, float vy, float r, int seg, float m);
         
-        void update(float deltaTime);
-        void draw();
+        void applyPhysics(float time, vector<Circle>& objects);
+        void applyPhysics2(float dt);
+        void updateVertices();
+        void draw(Shader& shader);
         void cleanup();
 
 };

@@ -400,4 +400,5 @@ CMakeFiles/PhysicsEngine.dir/src/main.cpp.o: \
  /usr/include/c++/13/bits/stl_bvector.h \
  /usr/include/c++/13/bits/vector.tcc \
  /home/cthunga/Documents/VSC/PhysicsEngine/Headers/VAO.h \
- /home/cthunga/Documents/VSC/PhysicsEngine/Headers/EBO.h
+ /home/cthunga/Documents/VSC/PhysicsEngine/Headers/EBO.h \
+ /home/cthunga/Documents/VSC/PhysicsEngine/Headers/shaderClass.h
