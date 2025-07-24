@@ -50,15 +50,17 @@ void Circle::applyPhysics(float dt, vector<Circle>& objects) {
         }
     }
 
-    cout << "g: " << g.x << ", " << g.y << ", " << g.z << endl;
+    //cout << "g: " << g.x << ", " << g.y << ", " << g.z << endl;
 
     acceleration = g;
     velocity += acceleration * dt;
     position += velocity * dt;
 
-    cout << "Position: " << position.x << ", " << position.y << ", " << position.z << endl;
-    cout << "Velocity: " << velocity.x << ", " << velocity.y << ", " << velocity.z << endl;
-    cout << "Acceleration: " << acceleration.x << ", " << acceleration.y << ", " << acceleration.z << endl;
+    //cout << "Position: " << position.x << ", " << position.y << ", " << position.z << endl;
+    //cout << "Velocity: " << velocity.x << ", " << velocity.y << ", " << velocity.z << endl;
+    //cout << "Acceleration: " << acceleration.x << ", " << acceleration.y << ", " << acceleration.z << endl;
+
+    updateVertices();
     
 }
 
@@ -97,6 +99,8 @@ void Circle::updateVertices(){
 }
 
 void Circle::draw(Shader& shader) {
+
+    glUniform4f(glGetUniformLocation(shader.ID, "u_Color"), 1.0f, 1.0f, 1.0f, 1.0f);
 
     VAO1.Bind();
     glDrawArrays(GL_TRIANGLE_FAN, 0, vertices.size() / 3);
