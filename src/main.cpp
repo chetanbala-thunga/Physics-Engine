@@ -14,22 +14,37 @@
 
 using namespace std;
 
-
+vector<Circle> objects;
 
 glm::vec3 scaleUniform = glm::vec3(1.0f);
 void scroll_callback(GLFWwindow* window, double xoffset, double yoffset) {
     float delta = (float)yoffset * 0.1f;
     glm::vec3 newScale = scaleUniform + glm::vec3(delta);
 
-    if (newScale.x > 0.05f && newScale.y > 0.05f && newScale.z > 0.05f) {
+    if (newScale.x > 0.1f && newScale.y > 0.1f && newScale.z > 0.1f) {
         scaleUniform = newScale;
 }
 
-    cout << "Scale: " << scaleUniform.x << ", " << scaleUniform.y << ", " << scaleUniform.z << endl;
+    //cout << "Scale: " << scaleUniform.x << ", " << scaleUniform.y << ", " << scaleUniform.z << endl;
+}
+
+void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods) {
+    if (key == GLFW_KEY_ESCAPE && action == GLFW_PRESS) {
+        glfwSetWindowShouldClose(window, true);
+    }
+    if (key == GLFW_KEY_E && action) {
+        Circle c4(0.0f, 0.0f, 0.0f, 0.0f, 0.1f, 10,  1000000000.0f);
+        objects.push_back(c4);
+    }
+    if (key == GLFW_KEY_R && action) {
+        if(objects.size() > 0)
+            objects.pop_back();
+    }
+    cout << "Key pressed: " << key << ", Action: " << action << endl;
 }
 
 
-vector<Circle> objects;
+
 constexpr float PI = 3.14159265358979323846f;
 constexpr float G = 6.67430e-11f;
 
@@ -53,6 +68,7 @@ int main(void)
     glfwSwapInterval(1);
 
     glfwSetScrollCallback(window, scroll_callback);
+    glfwSetKeyCallback(window, key_callback);
 
 
 
